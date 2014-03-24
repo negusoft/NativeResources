@@ -18,6 +18,8 @@ public class ResourceTest extends TestCase {
     private static final String SAMPLE_ANIMATOR_NAME = "fragment_open_exit";
     private static final String SAMPLE_DIMENSION_NAME = "app_icon_size";
     private static final String SAMPLE_FRACTION_NAME = "config_dimBehindFadeDuration";
+    private static final String SAMPLE_STRING_ARRAY_NAME = "phoneTypes";
+    private static final String SAMPLE_TYPED_ARRAY_NAME = "preloaded_drawables";
 
     public void testIdentifier() {
         int id = NativeResources.getIdentifier(SAMPLE_ID_NAME);
@@ -98,6 +100,19 @@ public class ResourceTest extends TestCase {
 
     public void testFraction() {
         NativeResources.getFraction(SAMPLE_FRACTION_NAME);
+    }
+
+    public void testArrayIdentifier() {
+        int stringArrayId = NativeResources.getArrayIdentifier(SAMPLE_STRING_ARRAY_NAME);
+        Assert.assertTrue(stringArrayId != 0);
+        int typedArrayId = NativeResources.getArrayIdentifier(SAMPLE_TYPED_ARRAY_NAME);
+        Assert.assertTrue(typedArrayId != 0);
+    }
+
+    public void testArray() {
+        NativeResources.getStringArray(SAMPLE_STRING_ARRAY_NAME);
+        NativeResources.getTextArray(SAMPLE_STRING_ARRAY_NAME);
+        NativeResources.getTypedArray(SAMPLE_TYPED_ARRAY_NAME);
     }
 
 }

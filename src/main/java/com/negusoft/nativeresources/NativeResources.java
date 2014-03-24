@@ -18,6 +18,7 @@ package com.negusoft.nativeresources;
 
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 
 /**
@@ -36,6 +37,7 @@ public class NativeResources {
     private static final String TYPE_ANIMATOR = "animator";
     private static final String TYPE_DIMEN = "dimen";
     private static final String TYPE_FRACTION = "fraction";
+    private static final String TYPE_ARRAY = "array";
 
     /** Get a native identifier by name as in 'R.id.name'. */
     public static int getIdentifier(String name) {
@@ -152,6 +154,40 @@ public class NativeResources {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_FRACTION, NATIVE_PACKAGE);
         return res.getFraction(id, 1, 1);
+    }
+
+    /** Get a native array id by name as in 'R.array.name'. */
+    public static int getArrayIdentifier(String name) {
+        Resources res = Resources.getSystem();
+        return res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
+    }
+
+    /** Get a native int array by name as in 'R.array.name'. */
+    public static int[] getIntArray(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
+        return res.getIntArray(id);
+    }
+
+    /** Get a native string array by name as in 'R.array.name'. */
+    public static String[] getStringArray(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
+        return res.getStringArray(id);
+    }
+
+    /** Get a native string array by name as in 'R.array.name'. */
+    public static CharSequence[] getTextArray(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
+        return res.getTextArray(id);
+    }
+
+    /** Get a native typed array by name as in 'R.array.name'. */
+    public static TypedArray getTypedArray(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
+        return res.obtainTypedArray(id);
     }
 
 }
