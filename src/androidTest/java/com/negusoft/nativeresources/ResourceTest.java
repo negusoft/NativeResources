@@ -36,10 +36,13 @@ public class ResourceTest extends TestCase {
     public void testString() {
         String string = NativeResources.getString(SAMPLE_STRING_NAME);
         Assert.assertNotNull(string);
+        String stringWithArgs = NativeResources.getString(SAMPLE_STRING_NAME, new Object[] {});
+        Assert.assertNotNull(stringWithArgs);
     }
 
     public void testDrawableIdentifier() {
-        NativeResources.getDrawableIdentifier(SAMPLE_DRAWABLE_NAME);
+        int id = NativeResources.getDrawableIdentifier(SAMPLE_DRAWABLE_NAME);
+        Assert.assertTrue(id != 0);
     }
 
     public void testDrawable() {

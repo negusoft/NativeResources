@@ -58,7 +58,14 @@ public class NativeResources {
     public static String getString(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
-        return id == 0 ? null : res.getString(id);
+        return res.getString(id);
+    }
+
+    /** Get a native drawable by name as in 'R.drawable.name'. */
+    public static String getString(String name, Object... formatArgs) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
+        return res.getString(id, formatArgs);
     }
 
     /** Get a native drawable id by name as in 'R.drawable.name'. */
@@ -71,7 +78,7 @@ public class NativeResources {
     public static Drawable getDrawable(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_DRAWABLE, NATIVE_PACKAGE);
-        return id == 0 ? null : res.getDrawable(id);
+        return res.getDrawable(id);
     }
 
     /** Get a native drawable id by name as in 'R.drawable.name'. */
