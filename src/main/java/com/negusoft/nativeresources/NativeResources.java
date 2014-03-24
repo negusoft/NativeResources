@@ -19,6 +19,7 @@ package com.negusoft.nativeresources;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.content.res.XmlResourceParser;
 import android.graphics.drawable.Drawable;
 
 /**
@@ -39,6 +40,7 @@ public class NativeResources {
     private static final String TYPE_DIMEN = "dimen";
     private static final String TYPE_FRACTION = "fraction";
     private static final String TYPE_ARRAY = "array";
+    private static final String TYPE_LAYOUT = "layout";
 
     /** Get a native identifier by name as in 'R.id.name'. */
     public static int getIdentifier(String name) {
@@ -202,6 +204,19 @@ public class NativeResources {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
         return res.obtainTypedArray(id);
+    }
+
+    /** Get a native layout id by name as in 'R.fraction.name'. */
+    public static int getLayoutIdentifier(String name) {
+        Resources res = Resources.getSystem();
+        return res.getIdentifier(name, TYPE_LAYOUT, NATIVE_PACKAGE);
+    }
+
+    /** Get a native layout by name as in 'R.fraction.name'. */
+    public static XmlResourceParser getLayout(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_LAYOUT, NATIVE_PACKAGE);
+        return res.getLayout(id);
     }
 
 }

@@ -21,6 +21,7 @@ public class ResourceTest extends TestCase {
     private static final String SAMPLE_FRACTION_NAME = "config_dimBehindFadeDuration";
     private static final String SAMPLE_STRING_ARRAY_NAME = "phoneTypes";
     private static final String SAMPLE_TYPED_ARRAY_NAME = "preloaded_drawables";
+    private static final String SAMPLE_LAYOUT_NAME = "alert_dialog";
 
     public void testIdentifier() {
         int id = NativeResources.getIdentifier(SAMPLE_ID_NAME);
@@ -123,6 +124,15 @@ public class ResourceTest extends TestCase {
         NativeResources.getStringArray(SAMPLE_STRING_ARRAY_NAME);
         NativeResources.getTextArray(SAMPLE_STRING_ARRAY_NAME);
         NativeResources.getTypedArray(SAMPLE_TYPED_ARRAY_NAME);
+    }
+
+    public void testLayoutIdentifier() {
+        int id = NativeResources.getLayoutIdentifier(SAMPLE_LAYOUT_NAME);
+        Assert.assertTrue(id != 0);
+    }
+
+    public void testLayout() {
+        NativeResources.getLayout(SAMPLE_LAYOUT_NAME);
     }
 
 }
