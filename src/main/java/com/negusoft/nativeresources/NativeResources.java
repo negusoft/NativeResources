@@ -35,6 +35,7 @@ public class NativeResources {
     private static final String TYPE_ANIM = "anim";
     private static final String TYPE_ANIMATOR = "animator";
     private static final String TYPE_DIMEN = "dimen";
+    private static final String TYPE_FRACTION = "fraction";
 
     /** Get a native identifier by name as in 'R.id.name'. */
     public static int getIdentifier(String name) {
@@ -138,6 +139,19 @@ public class NativeResources {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_DIMEN, NATIVE_PACKAGE);
         return res.getDimensionPixelSize(id);
+    }
+
+    /** Get a native fraction id by name as in 'R.fraction.name'. */
+    public static int getFractionIdentifier(String name) {
+        Resources res = Resources.getSystem();
+        return res.getIdentifier(name, TYPE_FRACTION, NATIVE_PACKAGE);
+    }
+
+    /** Get a native fraction by name as in 'R.fraction.name'. */
+    public static float getFraction(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_FRACTION, NATIVE_PACKAGE);
+        return res.getFraction(id, 1, 1);
     }
 
 }

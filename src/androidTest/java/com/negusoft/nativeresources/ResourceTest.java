@@ -17,6 +17,7 @@ public class ResourceTest extends TestCase {
     private static final String SAMPLE_ANIM_NAME = "lock_screen_exit";
     private static final String SAMPLE_ANIMATOR_NAME = "fragment_open_exit";
     private static final String SAMPLE_DIMENSION_NAME = "app_icon_size";
+    private static final String SAMPLE_FRACTION_NAME = "config_dimBehindFadeDuration";
 
     public void testIdentifier() {
         int id = NativeResources.getIdentifier(SAMPLE_ID_NAME);
@@ -88,6 +89,15 @@ public class ResourceTest extends TestCase {
         NativeResources.getDimension(SAMPLE_DIMENSION_NAME);
         NativeResources.getDimensionPixelOffset(SAMPLE_DIMENSION_NAME);
         NativeResources.getDimensionPixelSize(SAMPLE_DIMENSION_NAME);
+    }
+
+    public void testFractionIdentifier() {
+        int id = NativeResources.getFractionIdentifier(SAMPLE_FRACTION_NAME);
+        Assert.assertTrue(id != 0);
+    }
+
+    public void testFraction() {
+        NativeResources.getFraction(SAMPLE_FRACTION_NAME);
     }
 
 }
