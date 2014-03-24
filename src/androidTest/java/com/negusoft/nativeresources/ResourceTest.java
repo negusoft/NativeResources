@@ -22,6 +22,7 @@ public class ResourceTest extends TestCase {
     private static final String SAMPLE_STRING_ARRAY_NAME = "phoneTypes";
     private static final String SAMPLE_TYPED_ARRAY_NAME = "preloaded_drawables";
     private static final String SAMPLE_LAYOUT_NAME = "alert_dialog";
+    private static final String SAMPLE_PLURALS_NAME = "num_seconds_ago";
 
     public void testIdentifier() {
         int id = NativeResources.getIdentifier(SAMPLE_ID_NAME);
@@ -36,7 +37,7 @@ public class ResourceTest extends TestCase {
     public void testString() {
         String string = NativeResources.getString(SAMPLE_STRING_NAME);
         Assert.assertNotNull(string);
-        String stringWithArgs = NativeResources.getString(SAMPLE_STRING_NAME, new Object[] {});
+        String stringWithArgs = NativeResources.getString(SAMPLE_STRING_NAME, new Object[]{});
         Assert.assertNotNull(stringWithArgs);
     }
 
@@ -136,6 +137,20 @@ public class ResourceTest extends TestCase {
 
     public void testLayout() {
         NativeResources.getLayout(SAMPLE_LAYOUT_NAME);
+    }
+
+    public void testPluralsIdentifier() {
+        int id = NativeResources.getPluralsIdentifier(SAMPLE_PLURALS_NAME);
+        Assert.assertTrue(id != 0);
+    }
+
+    public void testPlurals() {
+        Assert.assertNotNull(
+                NativeResources.getQuantityString(SAMPLE_PLURALS_NAME, 0));
+        Assert.assertNotNull(
+                NativeResources.getQuantityString(SAMPLE_PLURALS_NAME, 0, new Object[] { 0 }));
+        Assert.assertNotNull(
+                NativeResources.getQuantityText(SAMPLE_PLURALS_NAME, 0));
     }
 
 }

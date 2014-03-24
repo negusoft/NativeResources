@@ -41,6 +41,7 @@ public class NativeResources {
     private static final String TYPE_FRACTION = "fraction";
     private static final String TYPE_ARRAY = "array";
     private static final String TYPE_LAYOUT = "layout";
+    private static final String TYPE_PLURALS = "plurals";
 
     /** Get a native identifier by name as in 'R.id.name'. */
     public static int getIdentifier(String name) {
@@ -224,6 +225,33 @@ public class NativeResources {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_LAYOUT, NATIVE_PACKAGE);
         return res.getLayout(id);
+    }
+
+    /** Get a native plurals id by name as in 'R.plurals.name'. */
+    public static int getPluralsIdentifier(String name) {
+        Resources res = Resources.getSystem();
+        return res.getIdentifier(name, TYPE_PLURALS, NATIVE_PACKAGE);
+    }
+
+    /** Get a native plurals by name as in 'R.plurals.name'. */
+    public static String getQuantityString(String name, int quantity) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_PLURALS, NATIVE_PACKAGE);
+        return res.getQuantityString(id, quantity);
+    }
+
+    /** Get a native plurals by name as in 'R.plurals.name'. */
+    public static String getQuantityString(String name, int quantity, Object... formatArgs) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_PLURALS, NATIVE_PACKAGE);
+        return res.getQuantityString(id, quantity, formatArgs);
+    }
+
+    /** Get a native plurals by name as in 'R.plurals.name'. */
+    public static CharSequence getQuantityText(String name, int quantity) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_PLURALS, NATIVE_PACKAGE);
+        return res.getQuantityText(id, quantity);
     }
 
 }
