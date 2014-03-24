@@ -16,6 +16,7 @@
 
 package com.negusoft.nativeresources;
 
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 
@@ -29,6 +30,7 @@ public class NativeResources {
     private static final String TYPE_ID = "id";
     private static final String TYPE_STRING = "string";
     private static final String TYPE_DRAWABLE = "drawable";
+    private static final String TYPE_COLOR = "color";
     private static final String TYPE_ANIM = "anim";
     private static final String TYPE_ANIMATOR = "animator";
 
@@ -62,6 +64,26 @@ public class NativeResources {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_DRAWABLE, NATIVE_PACKAGE);
         return id == 0 ? null : res.getDrawable(id);
+    }
+
+    /** Get a native drawable id by name as in 'R.drawable.name'. */
+    public static int getColorIdentifier(String name) {
+        Resources res = Resources.getSystem();
+        return res.getIdentifier(name, TYPE_COLOR, NATIVE_PACKAGE);
+    }
+
+    /** Get a native drawable by name as in 'R.drawable.name'. */
+    public static int getColor(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_COLOR, NATIVE_PACKAGE);
+        return res.getColor(id);
+    }
+
+    /** Get a native drawable by name as in 'R.drawable.name'. */
+    public static ColorStateList getColorStateList(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_COLOR, NATIVE_PACKAGE);
+        return id == 0 ? null : res.getColorStateList(id);
     }
 
     /** Get a native id by name as in 'R.anim.name'. */

@@ -1,5 +1,6 @@
 package com.negusoft.nativeresources;
 
+import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 
 import junit.framework.Assert;
@@ -10,6 +11,8 @@ public class ResourceTest extends TestCase {
     private static final String SAMPLE_ID_NAME = "content";
     private static final String SAMPLE_STRING_NAME = "silent_mode";
     private static final String SAMPLE_DRAWABLE_NAME = "btn_check_buttonless_on";
+    private static final String SAMPLE_COLOR_NAME = "darker_gray";
+    private static final String SAMPLE_COLOR_STATE_LIST_NAME = "search_url_text";
     private static final String SAMPLE_ANIM_NAME = "lock_screen_exit";
     private static final String SAMPLE_ANIMATOR_NAME = "fragment_open_exit";
 
@@ -36,6 +39,25 @@ public class ResourceTest extends TestCase {
     public void testDrawable() {
         Drawable drawable = NativeResources.getDrawable(SAMPLE_DRAWABLE_NAME);
         Assert.assertNotNull(drawable);
+    }
+
+    public void testColorIdentifier() {
+        // test a simple color
+        int simpleId = NativeResources.getColorIdentifier(SAMPLE_COLOR_NAME);
+        Assert.assertTrue(simpleId != 0);
+        // test a state list color
+        int stateListId = NativeResources.getColorIdentifier(SAMPLE_COLOR_STATE_LIST_NAME);
+        Assert.assertTrue(stateListId != 0);
+    }
+
+    public void testColor() {
+        int color = NativeResources.getColor(SAMPLE_COLOR_NAME);
+        Assert.assertTrue(color != 0);
+    }
+
+    public void testColorStateList() {
+        ColorStateList color = NativeResources.getColorStateList(SAMPLE_COLOR_STATE_LIST_NAME);
+        Assert.assertNotNull(color);
     }
 
     public void testAnimIdentifier() {
