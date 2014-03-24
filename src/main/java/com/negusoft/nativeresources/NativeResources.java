@@ -31,8 +31,10 @@ public class NativeResources {
     private static final String TYPE_STRING = "string";
     private static final String TYPE_DRAWABLE = "drawable";
     private static final String TYPE_COLOR = "color";
+    private static final String TYPE_BOOL = "bool";
     private static final String TYPE_ANIM = "anim";
     private static final String TYPE_ANIMATOR = "animator";
+    private static final String TYPE_DIMEN = "dimen";
 
     /** Get a native identifier by name as in 'R.id.name'. */
     public static int getIdentifier(String name) {
@@ -86,7 +88,20 @@ public class NativeResources {
         return id == 0 ? null : res.getColorStateList(id);
     }
 
-    /** Get a native id by name as in 'R.anim.name'. */
+    /** Get a native boolean id by name as in 'R.bool.name'. */
+    public static int getBooleanIdentifier(String name) {
+        Resources res = Resources.getSystem();
+        return res.getIdentifier(name, TYPE_BOOL, NATIVE_PACKAGE);
+    }
+
+    /** Get a native boolean by name as in 'R.bool.name'. */
+    public static boolean getBoolean(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_BOOL, NATIVE_PACKAGE);
+        return res.getBoolean(id);
+    }
+
+    /** Get a native id by name as in 'R.bool.name'. */
     public static int getAnimIdentifier(String name) {
         Resources res = Resources.getSystem();
         return res.getIdentifier(name, TYPE_ANIM, NATIVE_PACKAGE);
@@ -98,5 +113,31 @@ public class NativeResources {
         return res.getIdentifier(name, TYPE_ANIMATOR, NATIVE_PACKAGE);
     }
 
+    /** Get a native dimension id by name as in 'R.dimen.name'. */
+    public static int getDimensionIdentifier(String name) {
+        Resources res = Resources.getSystem();
+        return res.getIdentifier(name, TYPE_DIMEN, NATIVE_PACKAGE);
+    }
+
+    /** Get a native dimension by name as in 'R.dimen.name'. */
+    public static float getDimension(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_DIMEN, NATIVE_PACKAGE);
+        return res.getDimension(id);
+    }
+
+    /** Get a native dimension by name as in 'R.dimen.name'. */
+    public static int getDimensionPixelOffset(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_DIMEN, NATIVE_PACKAGE);
+        return res.getDimensionPixelOffset(id);
+    }
+
+    /** Get a native dimension by name as in 'R.dimen.name'. */
+    public static int getDimensionPixelSize(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_DIMEN, NATIVE_PACKAGE);
+        return res.getDimensionPixelSize(id);
+    }
 
 }

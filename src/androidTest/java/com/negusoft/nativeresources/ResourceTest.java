@@ -13,8 +13,10 @@ public class ResourceTest extends TestCase {
     private static final String SAMPLE_DRAWABLE_NAME = "btn_check_buttonless_on";
     private static final String SAMPLE_COLOR_NAME = "darker_gray";
     private static final String SAMPLE_COLOR_STATE_LIST_NAME = "search_url_text";
+    private static final String SAMPLE_BOOLEAN_NAME = "split_action_bar_is_narrow";
     private static final String SAMPLE_ANIM_NAME = "lock_screen_exit";
     private static final String SAMPLE_ANIMATOR_NAME = "fragment_open_exit";
+    private static final String SAMPLE_DIMENSION_NAME = "app_icon_size";
 
     public void testIdentifier() {
         int id = NativeResources.getIdentifier(SAMPLE_ID_NAME);
@@ -32,8 +34,7 @@ public class ResourceTest extends TestCase {
     }
 
     public void testDrawableIdentifier() {
-        int id = NativeResources.getDrawableIdentifier(SAMPLE_DRAWABLE_NAME);
-        Assert.assertTrue(id != 0);
+        NativeResources.getDrawableIdentifier(SAMPLE_DRAWABLE_NAME);
     }
 
     public void testDrawable() {
@@ -51,13 +52,21 @@ public class ResourceTest extends TestCase {
     }
 
     public void testColor() {
-        int color = NativeResources.getColor(SAMPLE_COLOR_NAME);
-        Assert.assertTrue(color != 0);
+        NativeResources.getColor(SAMPLE_COLOR_NAME);
     }
 
     public void testColorStateList() {
         ColorStateList color = NativeResources.getColorStateList(SAMPLE_COLOR_STATE_LIST_NAME);
         Assert.assertNotNull(color);
+    }
+
+    public void testBooleanIdentifier() {
+        int id = NativeResources.getBooleanIdentifier(SAMPLE_BOOLEAN_NAME);
+        Assert.assertTrue(id != 0);
+    }
+
+    public void testBoolean() {
+        NativeResources.getBoolean(SAMPLE_BOOLEAN_NAME);
     }
 
     public void testAnimIdentifier() {
@@ -68,6 +77,17 @@ public class ResourceTest extends TestCase {
     public void testAnimatorIdentifier() {
         int id = NativeResources.getAnimatorIdentifier(SAMPLE_ANIMATOR_NAME);
         Assert.assertTrue(id != 0);
+    }
+
+    public void testDimensionIdentifier() {
+        int id = NativeResources.getDimensionIdentifier(SAMPLE_DIMENSION_NAME);
+        Assert.assertTrue(id != 0);
+    }
+
+    public void testDimension() {
+        NativeResources.getDimension(SAMPLE_DIMENSION_NAME);
+        NativeResources.getDimensionPixelOffset(SAMPLE_DIMENSION_NAME);
+        NativeResources.getDimensionPixelSize(SAMPLE_DIMENSION_NAME);
     }
 
 }
