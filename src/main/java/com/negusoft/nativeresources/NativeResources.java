@@ -33,6 +33,7 @@ public class NativeResources {
     private static final String TYPE_DRAWABLE = "drawable";
     private static final String TYPE_COLOR = "color";
     private static final String TYPE_BOOL = "bool";
+    private static final String TYPE_INTEGER = "integer";
     private static final String TYPE_ANIM = "anim";
     private static final String TYPE_ANIMATOR = "animator";
     private static final String TYPE_DIMEN = "dimen";
@@ -102,6 +103,19 @@ public class NativeResources {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_BOOL, NATIVE_PACKAGE);
         return res.getBoolean(id);
+    }
+
+    /** Get a native integer id by name as in 'R.integer.name'. */
+    public static int getIntegerIdentifier(String name) {
+        Resources res = Resources.getSystem();
+        return res.getIdentifier(name, TYPE_INTEGER, NATIVE_PACKAGE);
+    }
+
+    /** Get a native integer by name as in 'R.integer.name'. */
+    public static int getInteger(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_INTEGER, NATIVE_PACKAGE);
+        return res.getInteger(id);
     }
 
     /** Get a native id by name as in 'R.bool.name'. */

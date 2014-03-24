@@ -14,6 +14,7 @@ public class ResourceTest extends TestCase {
     private static final String SAMPLE_COLOR_NAME = "darker_gray";
     private static final String SAMPLE_COLOR_STATE_LIST_NAME = "search_url_text";
     private static final String SAMPLE_BOOLEAN_NAME = "split_action_bar_is_narrow";
+    private static final String SAMPLE_INTEGER_NAME = "kg_carousel_angle";
     private static final String SAMPLE_ANIM_NAME = "lock_screen_exit";
     private static final String SAMPLE_ANIMATOR_NAME = "fragment_open_exit";
     private static final String SAMPLE_DIMENSION_NAME = "app_icon_size";
@@ -70,6 +71,15 @@ public class ResourceTest extends TestCase {
 
     public void testBoolean() {
         NativeResources.getBoolean(SAMPLE_BOOLEAN_NAME);
+    }
+
+    public void testIntegerIdentifier() {
+        int id = NativeResources.getIntegerIdentifier(SAMPLE_INTEGER_NAME);
+        Assert.assertTrue(id != 0);
+    }
+
+    public void testInteger() {
+        NativeResources.getIdentifier(SAMPLE_INTEGER_NAME);
     }
 
     public void testAnimIdentifier() {
