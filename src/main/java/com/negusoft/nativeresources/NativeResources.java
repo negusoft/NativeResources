@@ -57,6 +57,11 @@ public class NativeResources {
 
     private static final String STYLEABLE_NATIVE_SUFIX = "_android_";
 
+
+    /******************************************************************************
+     * Identifier access
+     ******************************************************************************/
+
     /** Get a native identifier by name as in 'R.id.name'. */
     public static int getIdentifier(String name) {
         Resources res = Resources.getSystem();
@@ -69,31 +74,10 @@ public class NativeResources {
         return res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
     }
 
-    /** Get a native drawable by name as in 'R.drawable.name'. */
-    public static String getString(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
-        return res.getString(id);
-    }
-
-    /** Get a native drawable by name as in 'R.drawable.name'. */
-    public static String getString(String name, Object... formatArgs) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
-        return res.getString(id, formatArgs);
-    }
-
     /** Get a native drawable id by name as in 'R.drawable.name'. */
     public static int getDrawableIdentifier(String name) {
         Resources res = Resources.getSystem();
         return res.getIdentifier(name, TYPE_DRAWABLE, NATIVE_PACKAGE);
-    }
-
-    /** Get a native drawable by name as in 'R.drawable.name'. */
-    public static Drawable getDrawable(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_DRAWABLE, NATIVE_PACKAGE);
-        return res.getDrawable(id);
     }
 
     /** Get a native drawable id by name as in 'R.drawable.name'. */
@@ -102,44 +86,16 @@ public class NativeResources {
         return res.getIdentifier(name, TYPE_COLOR, NATIVE_PACKAGE);
     }
 
-    /** Get a native drawable by name as in 'R.drawable.name'. */
-    public static int getColor(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_COLOR, NATIVE_PACKAGE);
-        return res.getColor(id);
-    }
-
-    /** Get a native drawable by name as in 'R.drawable.name'. */
-    public static ColorStateList getColorStateList(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_COLOR, NATIVE_PACKAGE);
-        return id == 0 ? null : res.getColorStateList(id);
-    }
-
     /** Get a native boolean id by name as in 'R.bool.name'. */
     public static int getBooleanIdentifier(String name) {
         Resources res = Resources.getSystem();
         return res.getIdentifier(name, TYPE_BOOL, NATIVE_PACKAGE);
     }
 
-    /** Get a native boolean by name as in 'R.bool.name'. */
-    public static boolean getBoolean(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_BOOL, NATIVE_PACKAGE);
-        return res.getBoolean(id);
-    }
-
     /** Get a native integer id by name as in 'R.integer.name'. */
     public static int getIntegerIdentifier(String name) {
         Resources res = Resources.getSystem();
         return res.getIdentifier(name, TYPE_INTEGER, NATIVE_PACKAGE);
-    }
-
-    /** Get a native integer by name as in 'R.integer.name'. */
-    public static int getInteger(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_INTEGER, NATIVE_PACKAGE);
-        return res.getInteger(id);
     }
 
     /** Get a native id by name as in 'R.bool.name'. */
@@ -160,38 +116,10 @@ public class NativeResources {
         return res.getIdentifier(name, TYPE_DIMEN, NATIVE_PACKAGE);
     }
 
-    /** Get a native dimension by name as in 'R.dimen.name'. */
-    public static float getDimension(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_DIMEN, NATIVE_PACKAGE);
-        return res.getDimension(id);
-    }
-
-    /** Get a native dimension by name as in 'R.dimen.name'. */
-    public static int getDimensionPixelOffset(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_DIMEN, NATIVE_PACKAGE);
-        return res.getDimensionPixelOffset(id);
-    }
-
-    /** Get a native dimension by name as in 'R.dimen.name'. */
-    public static int getDimensionPixelSize(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_DIMEN, NATIVE_PACKAGE);
-        return res.getDimensionPixelSize(id);
-    }
-
     /** Get a native fraction id by name as in 'R.fraction.name'. */
     public static int getFractionIdentifier(String name) {
         Resources res = Resources.getSystem();
         return res.getIdentifier(name, TYPE_FRACTION, NATIVE_PACKAGE);
-    }
-
-    /** Get a native fraction by name as in 'R.fraction.name'. */
-    public static float getFraction(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_FRACTION, NATIVE_PACKAGE);
-        return res.getFraction(id, 1, 1);
     }
 
     /** Get a native array id by name as in 'R.array.name'. */
@@ -200,45 +128,10 @@ public class NativeResources {
         return res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
     }
 
-    /** Get a native int array by name as in 'R.array.name'. */
-    public static int[] getIntArray(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
-        return res.getIntArray(id);
-    }
-
-    /** Get a native string array by name as in 'R.array.name'. */
-    public static String[] getStringArray(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
-        return res.getStringArray(id);
-    }
-
-    /** Get a native string array by name as in 'R.array.name'. */
-    public static CharSequence[] getTextArray(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
-        return res.getTextArray(id);
-    }
-
-    /** Get a native typed array by name as in 'R.array.name'. */
-    public static TypedArray getTypedArray(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
-        return res.obtainTypedArray(id);
-    }
-
     /** Get a native layout id by name as in 'R.fraction.name'. */
     public static int getLayoutIdentifier(String name) {
         Resources res = Resources.getSystem();
         return res.getIdentifier(name, TYPE_LAYOUT, NATIVE_PACKAGE);
-    }
-
-    /** Get a native layout by name as in 'R.fraction.name'. */
-    public static XmlResourceParser getLayout(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_LAYOUT, NATIVE_PACKAGE);
-        return res.getLayout(id);
     }
 
     /** Get a native plurals id by name as in 'R.plurals.name'. */
@@ -247,79 +140,16 @@ public class NativeResources {
         return res.getIdentifier(name, TYPE_PLURALS, NATIVE_PACKAGE);
     }
 
-    /** Get a native plurals by name as in 'R.plurals.name'. */
-    public static String getQuantityString(String name, int quantity) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_PLURALS, NATIVE_PACKAGE);
-        return res.getQuantityString(id, quantity);
-    }
-
-    /** Get a native plurals by name as in 'R.plurals.name'. */
-    public static String getQuantityString(String name, int quantity, Object... formatArgs) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_PLURALS, NATIVE_PACKAGE);
-        return res.getQuantityString(id, quantity, formatArgs);
-    }
-
-    /** Get a native plurals by name as in 'R.plurals.name'. */
-    public static CharSequence getQuantityText(String name, int quantity) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_PLURALS, NATIVE_PACKAGE);
-        return res.getQuantityText(id, quantity);
-    }
-
-    /** Get a native string by name as in 'R.string.name'. */
-    public static CharSequence getText(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
-        return res.getText(id);
-    }
-
-    /** Get a native string by name as in 'R.string.name'. */
-    public static CharSequence getText(String name, CharSequence def) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
-        return res.getText(id, def);
-    }
-
     /** Get a native xml id by name as in 'R.xml.name'. */
     public static int getXmlIdentifier(String name) {
         Resources res = Resources.getSystem();
         return res.getIdentifier(name, TYPE_XML, NATIVE_PACKAGE);
     }
 
-    /** Get a native integer by name as in 'R.xml.name'. */
-    public static XmlResourceParser getXml(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_XML, NATIVE_PACKAGE);
-        return res.getXml(id);
-    }
-
     /** Get a native raw id by name as in 'R.raw.name'. */
     public static int getRawIdentifier(String name) {
         Resources res = Resources.getSystem();
         return res.getIdentifier(name, TYPE_RAW, NATIVE_PACKAGE);
-    }
-
-    /** Open a native raw resource by name as in 'R.raw.name'. */
-    public static InputStream openRawResource(String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_RAW, NATIVE_PACKAGE);
-        return res.openRawResource(id);
-    }
-
-    /** Open a native raw resource by name as in 'R.raw.name'. */
-    public static InputStream openRawResource(String name, TypedValue value) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_RAW, NATIVE_PACKAGE);
-        return res.openRawResource(id, value);
-    }
-
-    /** Open a native raw resource by name as in 'R.raw.name'. */
-    public static AssetFileDescriptor openRawResourceFd (String name) {
-        Resources res = Resources.getSystem();
-        int id = res.getIdentifier(name, TYPE_RAW, NATIVE_PACKAGE);
-        return res.openRawResourceFd(id);
     }
 
     /** Get a attribute identifier by name as in 'R.attr.name'. */
@@ -350,6 +180,221 @@ public class NativeResources {
     public static int getStyleIdentifier(String name) {
         Resources res = Resources.getSystem();
         return res.getIdentifier(name, TYPE_STYLE, NATIVE_PACKAGE);
+    }
+
+
+    /******************************************************************************
+     * Raw types
+     ******************************************************************************/
+
+    /** Get a native boolean by name as in 'R.bool.name'. */
+    public static boolean getBoolean(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_BOOL, NATIVE_PACKAGE);
+        return res.getBoolean(id);
+    }
+
+    /** Get a native integer by name as in 'R.integer.name'. */
+    public static int getInteger(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_INTEGER, NATIVE_PACKAGE);
+        return res.getInteger(id);
+    }
+
+    /** Get a native fraction by name as in 'R.fraction.name'. */
+    public static float getFraction(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_FRACTION, NATIVE_PACKAGE);
+        return res.getFraction(id, 1, 1);
+    }
+
+
+    /******************************************************************************
+     * String/Text
+     ******************************************************************************/
+
+    /** Get a native drawable by name as in 'R.drawable.name'. */
+    public static String getString(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
+        return res.getString(id);
+    }
+
+    /** Get a native drawable by name as in 'R.drawable.name'. */
+    public static String getString(String name, Object... formatArgs) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
+        return res.getString(id, formatArgs);
+    }
+
+    /** Get a native string by name as in 'R.string.name'. */
+    public static CharSequence getText(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
+        return res.getText(id);
+    }
+
+    /** Get a native string by name as in 'R.string.name'. */
+    public static CharSequence getText(String name, CharSequence def) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
+        return res.getText(id, def);
+    }
+
+
+    /******************************************************************************
+     * Drawable/Color
+     ******************************************************************************/
+
+    /** Get a native drawable by name as in 'R.drawable.name'. */
+    public static Drawable getDrawable(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_DRAWABLE, NATIVE_PACKAGE);
+        return res.getDrawable(id);
+    }
+
+    /** Get a native drawable by name as in 'R.drawable.name'. */
+    public static int getColor(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_COLOR, NATIVE_PACKAGE);
+        return res.getColor(id);
+    }
+
+    /** Get a native drawable by name as in 'R.drawable.name'. */
+    public static ColorStateList getColorStateList(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_COLOR, NATIVE_PACKAGE);
+        return id == 0 ? null : res.getColorStateList(id);
+    }
+
+
+    /******************************************************************************
+     * Arrays
+     ******************************************************************************/
+
+    /** Get a native int array by name as in 'R.array.name'. */
+    public static int[] getIntArray(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
+        return res.getIntArray(id);
+    }
+
+    /** Get a native string array by name as in 'R.array.name'. */
+    public static String[] getStringArray(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
+        return res.getStringArray(id);
+    }
+
+    /** Get a native string array by name as in 'R.array.name'. */
+    public static CharSequence[] getTextArray(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
+        return res.getTextArray(id);
+    }
+
+    /** Get a native typed array by name as in 'R.array.name'. */
+    public static TypedArray getTypedArray(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
+        return res.obtainTypedArray(id);
+    }
+
+
+    /******************************************************************************
+     * Dimensions
+     ******************************************************************************/
+
+    /** Get a native dimension by name as in 'R.dimen.name'. */
+    public static float getDimension(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_DIMEN, NATIVE_PACKAGE);
+        return res.getDimension(id);
+    }
+
+    /** Get a native dimension by name as in 'R.dimen.name'. */
+    public static int getDimensionPixelOffset(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_DIMEN, NATIVE_PACKAGE);
+        return res.getDimensionPixelOffset(id);
+    }
+
+    /** Get a native dimension by name as in 'R.dimen.name'. */
+    public static int getDimensionPixelSize(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_DIMEN, NATIVE_PACKAGE);
+        return res.getDimensionPixelSize(id);
+    }
+
+
+    /******************************************************************************
+     * Quantity
+     ******************************************************************************/
+
+    /** Get a native plurals by name as in 'R.plurals.name'. */
+    public static String getQuantityString(String name, int quantity) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_PLURALS, NATIVE_PACKAGE);
+        return res.getQuantityString(id, quantity);
+    }
+
+    /** Get a native plurals by name as in 'R.plurals.name'. */
+    public static String getQuantityString(String name, int quantity, Object... formatArgs) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_PLURALS, NATIVE_PACKAGE);
+        return res.getQuantityString(id, quantity, formatArgs);
+    }
+
+    /** Get a native plurals by name as in 'R.plurals.name'. */
+    public static CharSequence getQuantityText(String name, int quantity) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_PLURALS, NATIVE_PACKAGE);
+        return res.getQuantityText(id, quantity);
+    }
+
+
+    /******************************************************************************
+     * Raw resources
+     ******************************************************************************/
+
+    /** Open a native raw resource by name as in 'R.raw.name'. */
+    public static InputStream openRawResource(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_RAW, NATIVE_PACKAGE);
+        return res.openRawResource(id);
+    }
+
+    /** Open a native raw resource by name as in 'R.raw.name'. */
+    public static InputStream openRawResource(String name, TypedValue value) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_RAW, NATIVE_PACKAGE);
+        return res.openRawResource(id, value);
+    }
+
+    /** Open a native raw resource by name as in 'R.raw.name'. */
+    public static AssetFileDescriptor openRawResourceFd (String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_RAW, NATIVE_PACKAGE);
+        return res.openRawResourceFd(id);
+    }
+
+
+    /******************************************************************************
+     * Misc
+     ******************************************************************************/
+
+    /** Get a native layout by name as in 'R.fraction.name'. */
+    public static XmlResourceParser getLayout(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_LAYOUT, NATIVE_PACKAGE);
+        return res.getLayout(id);
+    }
+
+    /** Get a native integer by name as in 'R.xml.name'. */
+    public static XmlResourceParser getXml(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_XML, NATIVE_PACKAGE);
+        return res.getXml(id);
     }
 
     /** Get the index of an attribute within a stylable as in 'R.styleable.styleable_attr'. */
