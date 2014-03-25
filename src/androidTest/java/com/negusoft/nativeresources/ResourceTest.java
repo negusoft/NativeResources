@@ -28,6 +28,11 @@ public class ResourceTest extends TestCase {
     private static final String SAMPLE_PLURALS_NAME = "num_seconds_ago";
     private static final String SAMPLE_XML_NAME = "autotext";
     private static final String SAMPLE_RAW_NAME = "fallbackring";
+    private static final String SAMPLE_ATTR_NAME = "colorForeground";
+    private static final String SAMPLE_INTERPOLATOR_NAME = "bounce";
+    private static final String SAMPLE_MENU_NAME = "webview_copy";
+    private static final String SAMPLE_MIPMAP_NAME = "sym_def_app_icon";
+    private static final String SAMPLE_STYLE_NAME = "WindowTitleBackground";
 
     public void testIdentifier() {
         int id = NativeResources.getIdentifier(SAMPLE_ID_NAME);
@@ -187,6 +192,31 @@ public class ResourceTest extends TestCase {
         } catch (IOException e) {
             Assert.fail("Something went wrong dealing with the raw streams.");
         }
+    }
+
+    public void testAttrIdentifier() {
+        int id = NativeResources.getAttrIdentifier(SAMPLE_ATTR_NAME);
+        Assert.assertTrue(id != 0);
+    }
+
+    public void testInterpolatorIdentifier() {
+        int id = NativeResources.getInterpolatorIdentifier(SAMPLE_INTERPOLATOR_NAME);
+        Assert.assertTrue(id != 0);
+    }
+
+    public void testMenuIdentifier() {
+        int id = NativeResources.getMenuIdentifier(SAMPLE_MENU_NAME);
+        Assert.assertTrue(id != 0);
+    }
+
+    public void testMipmapIdentifier() {
+        int id = NativeResources.getMipmapIdentifier(SAMPLE_MIPMAP_NAME);
+        Assert.assertTrue(id != 0);
+    }
+
+    public void testStyleIdentifier() {
+        int id = NativeResources.getStyleIdentifier(SAMPLE_STYLE_NAME);
+        Assert.assertTrue(id != 0);
     }
 
 }

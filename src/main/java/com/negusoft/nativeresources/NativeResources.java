@@ -48,6 +48,11 @@ public class NativeResources {
     private static final String TYPE_PLURALS = "plurals";
     private static final String TYPE_XML = "xml";
     private static final String TYPE_RAW = "raw";
+    private static final String TYPE_ATTR = "attr";
+    private static final String TYPE_INTERPOLATOR = "interpolator";
+    private static final String TYPE_MENU = "menu";
+    private static final String TYPE_MIPMAP = "mipmap";
+    private static final String TYPE_STYLE = "style";
 
     /** Get a native identifier by name as in 'R.id.name'. */
     public static int getIdentifier(String name) {
@@ -312,6 +317,36 @@ public class NativeResources {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_RAW, NATIVE_PACKAGE);
         return res.openRawResourceFd(id);
+    }
+
+    /** Get a attribute identifier by name as in 'R.attr.name'. */
+    public static int getAttrIdentifier(String name) {
+        Resources res = Resources.getSystem();
+        return res.getIdentifier(name, TYPE_ATTR, NATIVE_PACKAGE);
+    }
+
+    /** Get a interpolator identifier by name as in 'R.interpolator.name'. */
+    public static int getInterpolatorIdentifier(String name) {
+        Resources res = Resources.getSystem();
+        return res.getIdentifier(name, TYPE_INTERPOLATOR, NATIVE_PACKAGE);
+    }
+
+    /** Get a menu identifier by name as in 'R.menu.name'. */
+    public static int getMenuIdentifier(String name) {
+        Resources res = Resources.getSystem();
+        return res.getIdentifier(name, TYPE_MENU, NATIVE_PACKAGE);
+    }
+
+    /** Get a mipmap identifier by name as in 'R.mipmap.name'. */
+    public static int getMipmapIdentifier(String name) {
+        Resources res = Resources.getSystem();
+        return res.getIdentifier(name, TYPE_MIPMAP, NATIVE_PACKAGE);
+    }
+
+    /** Get a style identifier by name as in 'R.style.name'. */
+    public static int getStyleIdentifier(String name) {
+        Resources res = Resources.getSystem();
+        return res.getIdentifier(name, TYPE_STYLE, NATIVE_PACKAGE);
     }
 
 }
