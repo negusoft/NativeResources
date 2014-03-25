@@ -42,6 +42,7 @@ public class NativeResources {
     private static final String TYPE_ARRAY = "array";
     private static final String TYPE_LAYOUT = "layout";
     private static final String TYPE_PLURALS = "plurals";
+    private static final String TYPE_XML = "xml";
 
     /** Get a native identifier by name as in 'R.id.name'. */
     public static int getIdentifier(String name) {
@@ -266,6 +267,19 @@ public class NativeResources {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
         return res.getText(id, def);
+    }
+
+    /** Get a native xml id by name as in 'R.xml.name'. */
+    public static int getXmlIdentifier(String name) {
+        Resources res = Resources.getSystem();
+        return res.getIdentifier(name, TYPE_XML, NATIVE_PACKAGE);
+    }
+
+    /** Get a native integer by name as in 'R.xml.name'. */
+    public static XmlResourceParser getXml(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_XML, NATIVE_PACKAGE);
+        return res.getXml(id);
     }
 
 }
