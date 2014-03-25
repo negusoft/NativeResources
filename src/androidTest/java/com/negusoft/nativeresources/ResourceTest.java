@@ -34,14 +34,29 @@ public class ResourceTest extends TestCase {
     private static final String SAMPLE_MIPMAP_NAME = "sym_def_app_icon";
     private static final String SAMPLE_STYLE_NAME = "WindowTitleBackground";
 
-    public void testIdentifier() {
-        int id = NativeResources.getIdentifier(SAMPLE_ID_NAME);
-        Assert.assertTrue(id != 0);
-    }
-
-    public void getStringIdentifier() {
-        int id = NativeResources.getIdentifier(SAMPLE_STRING_NAME);
-        Assert.assertTrue(id != 0);
+    public void testIdentifierAccess() {
+        assertTrue(NativeResources.getIdentifier(SAMPLE_ID_NAME) != 0);
+        assertTrue(NativeResources.getStringIdentifier(SAMPLE_STRING_NAME) != 0);
+        assertTrue(NativeResources.getDrawableIdentifier(SAMPLE_DRAWABLE_NAME) != 0);
+        assertTrue(NativeResources.getColorIdentifier(SAMPLE_COLOR_NAME) != 0);
+        assertTrue(NativeResources.getColorIdentifier(SAMPLE_COLOR_STATE_LIST_NAME) != 0);
+        assertTrue(NativeResources.getBooleanIdentifier(SAMPLE_BOOLEAN_NAME) != 0);
+        assertTrue(NativeResources.getIntegerIdentifier(SAMPLE_INTEGER_NAME) != 0);
+        assertTrue(NativeResources.getAnimIdentifier(SAMPLE_ANIM_NAME) != 0);
+        assertTrue(NativeResources.getAnimatorIdentifier(SAMPLE_ANIMATOR_NAME) != 0);
+        assertTrue(NativeResources.getDimensionIdentifier(SAMPLE_DIMENSION_NAME) != 0);
+        assertTrue(NativeResources.getFractionIdentifier(SAMPLE_FRACTION_NAME) != 0);
+        assertTrue(NativeResources.getArrayIdentifier(SAMPLE_STRING_ARRAY_NAME) != 0);
+        assertTrue(NativeResources.getArrayIdentifier(SAMPLE_TYPED_ARRAY_NAME) != 0);
+        assertTrue(NativeResources.getLayoutIdentifier(SAMPLE_LAYOUT_NAME) != 0);
+        assertTrue(NativeResources.getPluralsIdentifier(SAMPLE_PLURALS_NAME) != 0);
+        assertTrue(NativeResources.getXmlIdentifier(SAMPLE_XML_NAME) != 0);
+        assertTrue(NativeResources.getRawIdentifier(SAMPLE_RAW_NAME) != 0);
+        assertTrue(NativeResources.getAttrIdentifier(SAMPLE_ATTR_NAME) != 0);
+        assertTrue(NativeResources.getInterpolatorIdentifier(SAMPLE_INTERPOLATOR_NAME) != 0);
+        assertTrue(NativeResources.getMenuIdentifier(SAMPLE_MENU_NAME) != 0);
+        assertTrue(NativeResources.getMipmapIdentifier(SAMPLE_MIPMAP_NAME) != 0);
+        assertTrue(NativeResources.getStyleIdentifier(SAMPLE_STYLE_NAME) != 0);
     }
 
     public void testString() {
@@ -51,23 +66,9 @@ public class ResourceTest extends TestCase {
         Assert.assertNotNull(stringWithArgs);
     }
 
-    public void testDrawableIdentifier() {
-        int id = NativeResources.getDrawableIdentifier(SAMPLE_DRAWABLE_NAME);
-        Assert.assertTrue(id != 0);
-    }
-
     public void testDrawable() {
         Drawable drawable = NativeResources.getDrawable(SAMPLE_DRAWABLE_NAME);
         Assert.assertNotNull(drawable);
-    }
-
-    public void testColorIdentifier() {
-        // test a simple color
-        int simpleId = NativeResources.getColorIdentifier(SAMPLE_COLOR_NAME);
-        Assert.assertTrue(simpleId != 0);
-        // test a state list color
-        int stateListId = NativeResources.getColorIdentifier(SAMPLE_COLOR_STATE_LIST_NAME);
-        Assert.assertTrue(stateListId != 0);
     }
 
     public void testColor() {
@@ -79,37 +80,12 @@ public class ResourceTest extends TestCase {
         Assert.assertNotNull(color);
     }
 
-    public void testBooleanIdentifier() {
-        int id = NativeResources.getBooleanIdentifier(SAMPLE_BOOLEAN_NAME);
-        Assert.assertTrue(id != 0);
-    }
-
     public void testBoolean() {
         NativeResources.getBoolean(SAMPLE_BOOLEAN_NAME);
     }
 
-    public void testIntegerIdentifier() {
-        int id = NativeResources.getIntegerIdentifier(SAMPLE_INTEGER_NAME);
-        Assert.assertTrue(id != 0);
-    }
-
     public void testInteger() {
         NativeResources.getIdentifier(SAMPLE_INTEGER_NAME);
-    }
-
-    public void testAnimIdentifier() {
-        int id = NativeResources.getAnimIdentifier(SAMPLE_ANIM_NAME);
-        Assert.assertTrue(id != 0);
-    }
-
-    public void testAnimatorIdentifier() {
-        int id = NativeResources.getAnimatorIdentifier(SAMPLE_ANIMATOR_NAME);
-        Assert.assertTrue(id != 0);
-    }
-
-    public void testDimensionIdentifier() {
-        int id = NativeResources.getDimensionIdentifier(SAMPLE_DIMENSION_NAME);
-        Assert.assertTrue(id != 0);
     }
 
     public void testDimension() {
@@ -118,20 +94,8 @@ public class ResourceTest extends TestCase {
         NativeResources.getDimensionPixelSize(SAMPLE_DIMENSION_NAME);
     }
 
-    public void testFractionIdentifier() {
-        int id = NativeResources.getFractionIdentifier(SAMPLE_FRACTION_NAME);
-        Assert.assertTrue(id != 0);
-    }
-
     public void testFraction() {
         NativeResources.getFraction(SAMPLE_FRACTION_NAME);
-    }
-
-    public void testArrayIdentifier() {
-        int stringArrayId = NativeResources.getArrayIdentifier(SAMPLE_STRING_ARRAY_NAME);
-        Assert.assertTrue(stringArrayId != 0);
-        int typedArrayId = NativeResources.getArrayIdentifier(SAMPLE_TYPED_ARRAY_NAME);
-        Assert.assertTrue(typedArrayId != 0);
     }
 
     public void testArray() {
@@ -140,18 +104,8 @@ public class ResourceTest extends TestCase {
         NativeResources.getTypedArray(SAMPLE_TYPED_ARRAY_NAME);
     }
 
-    public void testLayoutIdentifier() {
-        int id = NativeResources.getLayoutIdentifier(SAMPLE_LAYOUT_NAME);
-        Assert.assertTrue(id != 0);
-    }
-
     public void testLayout() {
         NativeResources.getLayout(SAMPLE_LAYOUT_NAME);
-    }
-
-    public void testPluralsIdentifier() {
-        int id = NativeResources.getPluralsIdentifier(SAMPLE_PLURALS_NAME);
-        Assert.assertTrue(id != 0);
     }
 
     public void testPlurals() {
@@ -170,18 +124,8 @@ public class ResourceTest extends TestCase {
         Assert.assertEquals(result, def);
     }
 
-    public void testXmlIdentifier() {
-        int id = NativeResources.getXmlIdentifier(SAMPLE_XML_NAME);
-        Assert.assertTrue(id != 0);
-    }
-
     public void testXml() {
         NativeResources.getXml(SAMPLE_XML_NAME);
-    }
-
-    public void testRawIdentifier() {
-        int id = NativeResources.getRawIdentifier(SAMPLE_RAW_NAME);
-        Assert.assertTrue(id != 0);
     }
 
     public void testRaw() {
@@ -192,31 +136,6 @@ public class ResourceTest extends TestCase {
         } catch (IOException e) {
             Assert.fail("Something went wrong dealing with the raw streams.");
         }
-    }
-
-    public void testAttrIdentifier() {
-        int id = NativeResources.getAttrIdentifier(SAMPLE_ATTR_NAME);
-        Assert.assertTrue(id != 0);
-    }
-
-    public void testInterpolatorIdentifier() {
-        int id = NativeResources.getInterpolatorIdentifier(SAMPLE_INTERPOLATOR_NAME);
-        Assert.assertTrue(id != 0);
-    }
-
-    public void testMenuIdentifier() {
-        int id = NativeResources.getMenuIdentifier(SAMPLE_MENU_NAME);
-        Assert.assertTrue(id != 0);
-    }
-
-    public void testMipmapIdentifier() {
-        int id = NativeResources.getMipmapIdentifier(SAMPLE_MIPMAP_NAME);
-        Assert.assertTrue(id != 0);
-    }
-
-    public void testStyleIdentifier() {
-        int id = NativeResources.getStyleIdentifier(SAMPLE_STYLE_NAME);
-        Assert.assertTrue(id != 0);
     }
 
 }
