@@ -153,4 +153,11 @@ public class ResourceTest extends TestCase {
                 NativeResources.getQuantityText(SAMPLE_PLURALS_NAME, 0));
     }
 
+    public void testText() {
+        NativeResources.getText(SAMPLE_STRING_NAME);
+        CharSequence def = "Default";
+        CharSequence result = NativeResources.getText("", def);
+        Assert.assertEquals(result, def);
+    }
+
 }

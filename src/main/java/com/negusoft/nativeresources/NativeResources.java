@@ -254,4 +254,18 @@ public class NativeResources {
         return res.getQuantityText(id, quantity);
     }
 
+    /** Get a native string by name as in 'R.string.name'. */
+    public static CharSequence getText(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
+        return res.getText(id);
+    }
+
+    /** Get a native string by name as in 'R.string.name'. */
+    public static CharSequence getText(String name, CharSequence def) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
+        return res.getText(id, def);
+    }
+
 }
