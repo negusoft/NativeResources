@@ -53,6 +53,9 @@ public class NativeResources {
     private static final String TYPE_MENU = "menu";
     private static final String TYPE_MIPMAP = "mipmap";
     private static final String TYPE_STYLE = "style";
+    private static final String TYPE_STYLEABLE = "styleable";
+
+    private static final String STYLEABLE_NATIVE_SUFIX = "_android_";
 
     /** Get a native identifier by name as in 'R.id.name'. */
     public static int getIdentifier(String name) {
@@ -347,6 +350,13 @@ public class NativeResources {
     public static int getStyleIdentifier(String name) {
         Resources res = Resources.getSystem();
         return res.getIdentifier(name, TYPE_STYLE, NATIVE_PACKAGE);
+    }
+
+    /** Get the index of an attribute within a stylable as in 'R.styleable.styleable_attr'. */
+    public static int getStyleableAttributeIndex(String styleable, String attr) {
+        Resources res = Resources.getSystem();
+        String name = styleable + STYLEABLE_NATIVE_SUFIX + attr;
+        return res.getIdentifier(name, TYPE_STYLEABLE, NATIVE_PACKAGE);
     }
 
 }

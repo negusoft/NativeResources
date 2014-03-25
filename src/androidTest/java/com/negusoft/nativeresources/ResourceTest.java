@@ -61,14 +61,14 @@ public class ResourceTest extends TestCase {
 
     public void testString() {
         String string = NativeResources.getString(SAMPLE_STRING_NAME);
-        Assert.assertNotNull(string);
+        assertNotNull(string);
         String stringWithArgs = NativeResources.getString(SAMPLE_STRING_NAME, new Object[]{});
-        Assert.assertNotNull(stringWithArgs);
+        assertNotNull(stringWithArgs);
     }
 
     public void testDrawable() {
         Drawable drawable = NativeResources.getDrawable(SAMPLE_DRAWABLE_NAME);
-        Assert.assertNotNull(drawable);
+        assertNotNull(drawable);
     }
 
     public void testColor() {
@@ -77,7 +77,7 @@ public class ResourceTest extends TestCase {
 
     public void testColorStateList() {
         ColorStateList color = NativeResources.getColorStateList(SAMPLE_COLOR_STATE_LIST_NAME);
-        Assert.assertNotNull(color);
+        assertNotNull(color);
     }
 
     public void testBoolean() {
@@ -109,11 +109,11 @@ public class ResourceTest extends TestCase {
     }
 
     public void testPlurals() {
-        Assert.assertNotNull(
+        assertNotNull(
                 NativeResources.getQuantityString(SAMPLE_PLURALS_NAME, 0));
-        Assert.assertNotNull(
+        assertNotNull(
                 NativeResources.getQuantityString(SAMPLE_PLURALS_NAME, 0, new Object[] { 0 }));
-        Assert.assertNotNull(
+        assertNotNull(
                 NativeResources.getQuantityText(SAMPLE_PLURALS_NAME, 0));
     }
 
@@ -121,7 +121,7 @@ public class ResourceTest extends TestCase {
         NativeResources.getText(SAMPLE_STRING_NAME);
         CharSequence def = "Default";
         CharSequence result = NativeResources.getText("", def);
-        Assert.assertEquals(result, def);
+        assertEquals(result, def);
     }
 
     public void testXml() {
@@ -134,8 +134,9 @@ public class ResourceTest extends TestCase {
             NativeResources.openRawResource(SAMPLE_RAW_NAME, new TypedValue()).close();
             NativeResources.openRawResourceFd(SAMPLE_RAW_NAME).close();
         } catch (IOException e) {
-            Assert.fail("Something went wrong dealing with the raw streams.");
+            fail("Something went wrong dealing with the raw streams.");
         }
     }
+
 
 }
