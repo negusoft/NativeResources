@@ -16,11 +16,15 @@
 
 package com.negusoft.nativeresources;
 
+import android.content.res.AssetFileDescriptor;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.graphics.drawable.Drawable;
+import android.util.TypedValue;
+
+import java.io.InputStream;
 
 /**
  * Utility class to get native android resources.
@@ -43,6 +47,7 @@ public class NativeResources {
     private static final String TYPE_LAYOUT = "layout";
     private static final String TYPE_PLURALS = "plurals";
     private static final String TYPE_XML = "xml";
+    private static final String TYPE_RAW = "raw";
 
     /** Get a native identifier by name as in 'R.id.name'. */
     public static int getIdentifier(String name) {
@@ -280,6 +285,33 @@ public class NativeResources {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_XML, NATIVE_PACKAGE);
         return res.getXml(id);
+    }
+
+    /** Get a native raw id by name as in 'R.raw.name'. */
+    public static int getRawIdentifier(String name) {
+        Resources res = Resources.getSystem();
+        return res.getIdentifier(name, TYPE_RAW, NATIVE_PACKAGE);
+    }
+
+    /** Open a native raw resource by name as in 'R.raw.name'. */
+    public static InputStream openRawResource(String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_RAW, NATIVE_PACKAGE);
+        return res.openRawResource(id);
+    }
+
+    /** Open a native raw resource by name as in 'R.raw.name'. */
+    public static InputStream openRawResource(String name, TypedValue value) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_RAW, NATIVE_PACKAGE);
+        return res.openRawResource(id, value);
+    }
+
+    /** Open a native raw resource by name as in 'R.raw.name'. */
+    public static AssetFileDescriptor openRawResourceFd (String name) {
+        Resources res = Resources.getSystem();
+        int id = res.getIdentifier(name, TYPE_RAW, NATIVE_PACKAGE);
+        return res.openRawResourceFd(id);
     }
 
 }

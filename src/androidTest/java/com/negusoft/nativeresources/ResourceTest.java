@@ -2,9 +2,12 @@ package com.negusoft.nativeresources;
 
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
+import android.util.TypedValue;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
+
+import java.io.IOException;
 
 public class ResourceTest extends TestCase {
 
@@ -24,6 +27,7 @@ public class ResourceTest extends TestCase {
     private static final String SAMPLE_LAYOUT_NAME = "alert_dialog";
     private static final String SAMPLE_PLURALS_NAME = "num_seconds_ago";
     private static final String SAMPLE_XML_NAME = "autotext";
+    private static final String SAMPLE_RAW_NAME = "fallbackring";
 
     public void testIdentifier() {
         int id = NativeResources.getIdentifier(SAMPLE_ID_NAME);
@@ -168,6 +172,21 @@ public class ResourceTest extends TestCase {
 
     public void testXml() {
         NativeResources.getXml(SAMPLE_XML_NAME);
+    }
+
+    public void testRawIdentifier() {
+        int id = NativeResources.getRawIdentifier(SAMPLE_RAW_NAME);
+        Assert.assertTrue(id != 0);
+    }
+
+    public void testRaw() {
+        try {
+            NativeResources.openRawResource(SAMPLE_RAW_NAME).close();
+            NativeResources.openRawResource(SAMPLE_RAW_NAME, new TypedValue()).close();
+            NativeResources.openRawResourceFd(SAMPLE_RAW_NAME).close();
+        } catch (IOException e) {
+            Assert.fail("Something went wrong dealing with the raw streams.");
+        }
     }
 
 }
