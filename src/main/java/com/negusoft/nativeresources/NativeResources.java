@@ -187,21 +187,30 @@ public class NativeResources {
      * Raw types
      ******************************************************************************/
 
-    /** Get a native boolean by name as in 'R.bool.name'. */
+    /**
+     * Get a native boolean by name as in 'R.bool.name'.
+     * See {@link android.content.res.Resources#getBoolean(int) Resources.getBoolean()} for more info.
+     */
     public static boolean getBoolean(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_BOOL, NATIVE_PACKAGE);
         return res.getBoolean(id);
     }
 
-    /** Get a native integer by name as in 'R.integer.name'. */
+    /**
+     * Get a native integer by name as in 'R.integer.name'.
+     * See {@link android.content.res.Resources#getInteger(int) Resources.getInteger()} for more info.
+     */
     public static int getInteger(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_INTEGER, NATIVE_PACKAGE);
         return res.getInteger(id);
     }
 
-    /** Get a native fraction by name as in 'R.fraction.name'. */
+    /**
+     * Get a native fraction by name as in 'R.fraction.name'.
+     * See {@link android.content.res.Resources#getFraction(int) Resources.getFraction()} for more info.
+     */
     public static float getFraction(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_FRACTION, NATIVE_PACKAGE);
@@ -213,28 +222,40 @@ public class NativeResources {
      * String/Text
      ******************************************************************************/
 
-    /** Get a native drawable by name as in 'R.drawable.name'. */
+    /**
+     * Get a native drawable by name as in 'R.drawable.name'.
+     * See {@link android.content.res.Resources#getString(int) Resources.getString()} for more info.
+     */
     public static String getString(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
         return res.getString(id);
     }
 
-    /** Get a native drawable by name as in 'R.drawable.name'. */
+    /**
+     * Get a native drawable by name as in 'R.drawable.name'.
+     * See {@link android.content.res.Resources#getString(int, java.lang.Object...) Resources.getString()} for more info.
+     */
     public static String getString(String name, Object... formatArgs) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
         return res.getString(id, formatArgs);
     }
 
-    /** Get a native string by name as in 'R.string.name'. */
+    /**
+     * Get a native string by name as in 'R.string.name'.
+     * See {@link android.content.res.Resources#getText(int) Resources.getText()} for more info.
+     */
     public static CharSequence getText(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
         return res.getText(id);
     }
 
-    /** Get a native string by name as in 'R.string.name'. */
+    /**
+     * Get a native string by name as in 'R.string.name'.
+     * See {@link android.content.res.Resources#getText(int,java.lang.CharSequence) Resources.getText()} for more info.
+     */
     public static CharSequence getText(String name, CharSequence def) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_STRING, NATIVE_PACKAGE);
@@ -246,21 +267,30 @@ public class NativeResources {
      * Drawable/Color
      ******************************************************************************/
 
-    /** Get a native drawable by name as in 'R.drawable.name'. */
+    /**
+     * Get a native drawable by name as in 'R.drawable.name'.
+     * See {@link android.content.res.Resources#getDrawable(int) Resources.getDrawable()} for more info.
+     */
     public static Drawable getDrawable(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_DRAWABLE, NATIVE_PACKAGE);
         return res.getDrawable(id);
     }
 
-    /** Get a native drawable by name as in 'R.drawable.name'. */
+    /**
+     * Get a native drawable by name as in 'R.drawable.name'.
+     * See {@link android.content.res.Resources#getColor(int) Resources.getColor()} for more info.
+     */
     public static int getColor(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_COLOR, NATIVE_PACKAGE);
         return res.getColor(id);
     }
 
-    /** Get a native drawable by name as in 'R.drawable.name'. */
+    /**
+     * Get a native drawable by name as in 'R.drawable.name'.
+     * See {@link android.content.res.Resources#getColorStateList(int) Resources.getColorStateList()} for more info.
+     */
     public static ColorStateList getColorStateList(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_COLOR, NATIVE_PACKAGE);
@@ -272,28 +302,40 @@ public class NativeResources {
      * Arrays
      ******************************************************************************/
 
-    /** Get a native int array by name as in 'R.array.name'. */
+    /**
+     * Get a native int array by name as in 'R.array.name'.
+     * See {@link android.content.res.Resources#getIntArray(int) Resources.getIntArray()} for more info.
+     */
     public static int[] getIntArray(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
         return res.getIntArray(id);
     }
 
-    /** Get a native string array by name as in 'R.array.name'. */
+    /**
+     * Get a native string array by name as in 'R.array.name'.
+     * See {@link android.content.res.Resources#getStringArray(int) Resources.getStringArray()} for more info.
+     */
     public static String[] getStringArray(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
         return res.getStringArray(id);
     }
 
-    /** Get a native string array by name as in 'R.array.name'. */
+    /**
+     * Get a native string array by name as in 'R.array.name'.
+     * See {@link android.content.res.Resources#getTextArray(int) Resources.getTextArray()} for more info.
+     */
     public static CharSequence[] getTextArray(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
         return res.getTextArray(id);
     }
 
-    /** Get a native typed array by name as in 'R.array.name'. */
+    /**
+     * Get a native typed array by name as in 'R.array.name'.
+     * See {@link android.content.res.Resources#obtainTypedArray(int) Resources.obtainTypedArray()} for more info.
+     */
     public static TypedArray getTypedArray(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_ARRAY, NATIVE_PACKAGE);
@@ -305,21 +347,30 @@ public class NativeResources {
      * Dimensions
      ******************************************************************************/
 
-    /** Get a native dimension by name as in 'R.dimen.name'. */
+    /**
+     * Get a native dimension by name as in 'R.dimen.name'.
+     * See {@link android.content.res.Resources#getDimension(int) Resources.getDimension()} for more info.
+     */
     public static float getDimension(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_DIMEN, NATIVE_PACKAGE);
         return res.getDimension(id);
     }
 
-    /** Get a native dimension by name as in 'R.dimen.name'. */
+    /**
+     * Get a native dimension by name as in 'R.dimen.name'.
+     * See {@link android.content.res.Resources#getDimensionPixelOffset(int) Resources.getDimensionPixelOffset()} for more info.
+     */
     public static int getDimensionPixelOffset(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_DIMEN, NATIVE_PACKAGE);
         return res.getDimensionPixelOffset(id);
     }
 
-    /** Get a native dimension by name as in 'R.dimen.name'. */
+    /**
+     * Get a native dimension by name as in 'R.dimen.name'.
+     * See {@link android.content.res.Resources#getDimensionPixelSize(int) Resources.getDimensionPixelSize()} for more info.
+     */
     public static int getDimensionPixelSize(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_DIMEN, NATIVE_PACKAGE);
@@ -331,21 +382,30 @@ public class NativeResources {
      * Quantity
      ******************************************************************************/
 
-    /** Get a native plurals by name as in 'R.plurals.name'. */
+    /**
+     * Get a native plurals by name as in 'R.plurals.name'.
+     * See {@link android.content.res.Resources#getQuantityString(int,int) Resources.getQuantityString()} for more info.
+     */
     public static String getQuantityString(String name, int quantity) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_PLURALS, NATIVE_PACKAGE);
         return res.getQuantityString(id, quantity);
     }
 
-    /** Get a native plurals by name as in 'R.plurals.name'. */
+    /**
+     * Get a native plurals by name as in 'R.plurals.name'.
+     * See {@link android.content.res.Resources#getQuantityString(int,int,java.lang.Object...) Resources.getQuantityString()} for more info.
+     */
     public static String getQuantityString(String name, int quantity, Object... formatArgs) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_PLURALS, NATIVE_PACKAGE);
         return res.getQuantityString(id, quantity, formatArgs);
     }
 
-    /** Get a native plurals by name as in 'R.plurals.name'. */
+    /**
+     * Get a native plurals by name as in 'R.plurals.name'.
+     * See {@link android.content.res.Resources#getQuantityText(int,int) Resources.getQuantityText()} for more info.
+     */
     public static CharSequence getQuantityText(String name, int quantity) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_PLURALS, NATIVE_PACKAGE);
@@ -357,21 +417,30 @@ public class NativeResources {
      * Raw resources
      ******************************************************************************/
 
-    /** Open a native raw resource by name as in 'R.raw.name'. */
+    /**
+     * Open a native raw resource by name as in 'R.raw.name'.
+     * See {@link android.content.res.Resources#openRawResource(int) Resources.openRawResource()} for more info.
+     */
     public static InputStream openRawResource(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_RAW, NATIVE_PACKAGE);
         return res.openRawResource(id);
     }
 
-    /** Open a native raw resource by name as in 'R.raw.name'. */
+    /**
+     * Open a native raw resource by name as in 'R.raw.name'.
+     * See {@link android.content.res.Resources#openRawResource(int,android.util.TypedValue) Resources.openRawResource()} for more info.
+     */
     public static InputStream openRawResource(String name, TypedValue value) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_RAW, NATIVE_PACKAGE);
         return res.openRawResource(id, value);
     }
 
-    /** Open a native raw resource by name as in 'R.raw.name'. */
+    /**
+     * Open a native raw resource by name as in 'R.raw.name'.
+     * See {@link android.content.res.Resources#openRawResourceFd(int) Resources.openRawResourceFd()} for more info.
+     */
     public static AssetFileDescriptor openRawResourceFd (String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_RAW, NATIVE_PACKAGE);
@@ -383,21 +452,30 @@ public class NativeResources {
      * Misc
      ******************************************************************************/
 
-    /** Get a native layout by name as in 'R.fraction.name'. */
+    /**
+     * Get a native layout by name as in 'R.layout.name'.
+     * See {@link android.content.res.Resources#getLayout(int) Resources.getLayout()} for more info.
+     */
     public static XmlResourceParser getLayout(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_LAYOUT, NATIVE_PACKAGE);
         return res.getLayout(id);
     }
 
-    /** Get a native integer by name as in 'R.xml.name'. */
+    /**
+     * Get a native integer by name as in 'R.xml.name'.
+     * See {@link android.content.res.Resources#getXml(int) Resources.getXml()} for more info.
+     */
     public static XmlResourceParser getXml(String name) {
         Resources res = Resources.getSystem();
         int id = res.getIdentifier(name, TYPE_XML, NATIVE_PACKAGE);
         return res.getXml(id);
     }
 
-    /** Get the index of an attribute within a stylable as in 'R.styleable.styleable_attr'. */
+    /**
+     * Get the index of an attribute within a stylable as in 'R.styleable.styleable_attr'. In the
+     * practice this is pretty useless since you can't access the actual styleable attribute.
+     */
     public static int getStyleableAttributeIndex(String styleable, String attr) {
         Resources res = Resources.getSystem();
         String name = styleable + STYLEABLE_NATIVE_SUFIX + attr;
