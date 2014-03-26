@@ -17,14 +17,14 @@ Setup
 
 Simply add the 'NativeResources.jar' file to your build path. You can download it from the [release section](https://github.com/negusoft/NativeResources/releases).
 
-[In fact, there is only a single class in the library so you can just copy it to your project or copy-past the functions 
+[In fact, there is only a single class in the library so you can just copy it to your project or copy-paste the functions 
 you need...]
 
 
 Usage
 =====
 
-You can call any of the static methods of NativeResources and pass the name of the resource to get the identifier. You might then use this value as you would use an identifier taken from the "R" class.
+You can call any of the static methods of NativeResources and pass the name of the resource to get the identifier. You can then use this value as you would use an identifier taken from the "R" class.
 
 For example, we retrieve a native drawable and set it as the background of our view:
 ``` java
@@ -54,7 +54,7 @@ You can find the resources in your SDK direcotry in the following path:
 
 "[SDK-root]/platforms/android-X/data/res"
 
-Notice "android-X" in the path. X is the version of the platform. This also means that you have to be careful because a given asset might be available only in some versions of the platform (as explained in the disclaimer.
+Notice "android-X" in the path. X is the version of the platform. This also means that you have to be careful because a given asset might be available only in some versions of the platform (as explained in the disclaimer).
 
 
 License
